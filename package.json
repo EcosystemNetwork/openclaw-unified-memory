@@ -1,0 +1,59 @@
+{
+  "name": "@openclaw/unified-memory",
+  "version": "0.1.0",
+  "description": "Unified Memory Interface for OpenClaw - Multi-backend memory system with migration and introspection",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./adapters": {
+      "import": "./dist/adapters/index.js",
+      "types": "./dist/adapters/index.d.ts"
+    },
+    "./migration": {
+      "import": "./dist/migration/index.js",
+      "types": "./dist/migration/index.d.ts"
+    },
+    "./introspection": {
+      "import": "./dist/introspection/index.js",
+      "types": "./dist/introspection/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --test dist/**/*.test.js",
+    "lint": "eslint src/**/*.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "openclaw",
+    "memory",
+    "vector-database",
+    "embeddings",
+    "rag"
+  ],
+  "author": "OpenClaw Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.0",
+    "uuid": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.7.0"
+  },
+  "peerDependencies": {
+    "openclaw": "^0.5.0"
+  },
+  "optionalDependencies": {
+    "@lancedb/lancedb": "^0.15.0",
+    "chromadb": "^1.10.0",
+    "openai": "^4.0.0"
+  }
+}
